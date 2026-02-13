@@ -16,8 +16,8 @@ phases:
       - chmod +x kubectl
       - mv kubectl /usr/local/bin/kubectl
       - kubectl version --client 
-      
-  pre_build:
+
+ pre_build:
     commands:
       - echo Logging in to ECR...
       - ACCOUNT_ID=$(aws sts get-caller-identity --query Account --output text)
