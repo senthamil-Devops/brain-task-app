@@ -8,6 +8,15 @@ env:
     ACCOUNT_ID: 319220143636
 
 phases:
+
+ install:
+    commands:
+      - echo Installing kubectl...
+      - curl -LO "https://dl.k8s.io/release/v1.28.2/bin/linux/amd64/kubectl"
+      - chmod +x kubectl
+      - mv kubectl /usr/local/bin/kubectl
+      - kubectl version --client
+      
   pre_build:
     commands:
       - echo Logging in to ECR...
