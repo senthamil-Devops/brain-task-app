@@ -1,9 +1,10 @@
 version: 0.0
 Resources:
-  - braintask:
-      Type: Kubernetes
+  - TargetService:
+      Type: AWS::EKS::Kubernetes
       Properties:
         ClusterName: braintask
         Namespace: default
-        ServiceName: braintask-service
-        DeploymentName: braintask-deployment
+        ManifestFiles:
+          - deployment.yaml
+          - service.yaml
