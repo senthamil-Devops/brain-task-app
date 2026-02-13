@@ -1,0 +1,9 @@
+version: 0.0
+Resources:
+  - braintask:
+      Type: Kubernetes
+      Properties:
+        ClusterName: braintask
+        Namespace: default
+        ServiceName: braintask-service
+        DeploymentName: braintask-deployment
