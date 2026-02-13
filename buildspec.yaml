@@ -25,7 +25,7 @@ phases:
       - echo Updating kubeconfig for EKS...
       - aws eks update-kubeconfig --region $AWS_REGION --name $CLUSTER_NAME
 
-  build:
+ build:
     commands:
       - echo Building Docker image...
       - docker build -t $ECR_REPO:latest .
