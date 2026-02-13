@@ -32,7 +32,7 @@ phases:
       - docker tag $ECR_REPO:latest $ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com/$ECR_REPO:latest
       - docker push $ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com/$ECR_REPO:latest
 
-  post_build:
+ post_build:
     commands:
       - echo Deploying to EKS...
       - kubectl apply -f deployment.yaml
