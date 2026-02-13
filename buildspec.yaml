@@ -35,4 +35,6 @@ phases:
  post_build:
     commands:
       - echo Deploying to EKS...
+      - aws eks update-kubeconfig --region ap-south-1 --name braintask
+      - kubectl apply -f deployment.yaml
       - kubectl apply -f service.yaml
