@@ -15,5 +15,6 @@ spec:
       containers:
       - name: braintask
         image: 319220143636.dkr.ecr.ap-south-1.amazonaws.com/braintask
+        imagePullPolicy: Always
         ports:
         - containerPort: 3000
