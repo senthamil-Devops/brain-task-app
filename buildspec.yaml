@@ -35,7 +35,6 @@ phases:
  post_build:
     commands:
       - echo Deploying to EKS...
-      - kubectl get configmap aws-auth -n kube-system -o yaml > aws-auth.yaml
       - aws eks update-kubeconfig --region ap-south-1 --name braintask
       - kubectl apply -f deployment.yaml
       - kubectl apply -f service.yaml
